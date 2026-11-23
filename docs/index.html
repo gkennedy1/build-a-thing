@@ -7,10 +7,11 @@
   <meta name="theme-color" content="#f9f7f3">
   <title>Build a Thing — Greg Kennedy</title>
   <link rel="icon" type="image/svg+xml" href="./project-roll.svg">
-  <link rel="stylesheet" href="./styles.css?v=8">
+  <link rel="stylesheet" href="./styles.css?v=9">
   <script src="./projects.js?v=5" defer></script>
   <script src="./site.js?v=5" defer></script>
   <script src="./hero-halo.js" defer></script>
+  <script src="./roll-scenes.js" defer></script>
 </head>
 <body>
   <header class="site-header wrap">
@@ -35,15 +36,18 @@
     </section>
 
     <section class="projects wrap" aria-labelledby="projects">
+      <div class="roll-scene roll-scene--end" data-roll-scene="desk" aria-hidden="true"></div>
       <h2 id="projects" class="section-title" tabindex="-1">Projects</h2>
       <div class="filters" role="group" aria-label="Filter projects by status" hidden></div>
       <p class="visually-hidden" id="results" role="status"></p>
       <div id="project-list"><p class="muted">Loading projects…</p></div>
       <noscript>Enable JavaScript to view the project list.</noscript>
+      <div class="roll-scene roll-scene--bottom" data-roll-scene="workbench" aria-hidden="true"></div>
     </section>
 
     <section class="updates" aria-labelledby="updates">
       <div class="updates-layout wrap">
+        <div class="roll-scene roll-scene--end" data-roll-scene="arcade" aria-hidden="true"></div>
         <h2 id="updates" class="section-title" tabindex="-1">Recent updates</h2>
         <ol id="update-list"></ol>
       </div>

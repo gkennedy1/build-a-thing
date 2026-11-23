@@ -62,6 +62,47 @@ a { color: inherit; text-underline-offset: .19em; }
 .site-header nav a:hover { background: var(--bone); }
 .site-header .github-link { border: 1px solid var(--line); padding-inline: 16px; }
 .wordmark { gap: 9px; font: 750 1.25rem/1 var(--wordmark); letter-spacing: -.025em; }
+.wordmark img { flex: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .wordmark:focus-visible img { animation: header-roll 520ms ease-in-out; }
+
+  @media (hover: hover) {
+    .wordmark:hover img { animation: header-roll 520ms ease-in-out; }
+  }
+}
+
+@keyframes header-roll {
+  42% { transform: translateX(-5px) rotate(-35deg); }
+  73% { transform: translateX(1px) rotate(7deg); }
+}
+
+.projects, .updates-layout, .project-detail { position: relative; }
+
+.roll-scene {
+  position: absolute;
+  inset-block-start: 4px;
+  inset-inline-start: 0;
+  inline-size: min(7rem, 100%);
+  aspect-ratio: 18 / 7;
+  pointer-events: none;
+}
+
+.roll-scene svg { display: block; inline-size: 100%; block-size: 100%; }
+.roll-scene--end { inset-inline: auto 0; }
+.roll-scene--bottom { inset-block: auto 4px; }
+
+@media (min-width: 96rem) {
+  .roll-scene {
+    --roll-offset: calc((76rem - 100vw) / 4 - 4.125rem);
+    inset-block-start: 3.5rem;
+    inset-inline-start: var(--roll-offset);
+    inline-size: 8.25rem;
+  }
+
+  .roll-scene--end { inset-inline: auto var(--roll-offset); }
+  .roll-scene--bottom { inset-block: auto 3.5rem; }
+}
 
 .intro {
   position: relative;

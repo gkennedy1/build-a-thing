@@ -7,11 +7,12 @@
   <meta name="description" content="Read the pitch and see screenshots from projects on Build a Thing.">
   <title>Project — Build a Thing</title>
   <link rel="icon" type="image/svg+xml" href="./project-roll.svg">
-  <link rel="stylesheet" href="./styles.css?v=8">
+  <link rel="stylesheet" href="./styles.css?v=9">
   <link rel="stylesheet" href="./project-likes.css">
   <script src="./projects.js?v=5" defer></script>
   <script src="./project-likes.js" defer></script>
   <script src="./site.js?v=6" defer></script>
+  <script src="./roll-scenes.js" defer></script>
 </head>
 <body>
   <header class="site-header wrap">
@@ -27,6 +28,7 @@
     <p id="detail-message" role="status">Loading project…</p>
     <noscript>Enable JavaScript to view project details.</noscript>
     <article id="project-detail" aria-labelledby="project-title" hidden>
+      <div class="roll-scene roll-scene--end" data-roll-scene="workbench" aria-hidden="true"></div>
       <header class="detail-header">
         <div class="detail-title">
           <h1 id="project-title"></h1>
@@ -65,6 +67,7 @@
         <h2 id="screenshots-title" class="section-title">Screenshots</h2>
         <div id="screenshot-grid" class="screenshot-grid"></div>
       </section>
+      <div class="roll-scene roll-scene--bottom" data-roll-scene="arcade" aria-hidden="true"></div>
     </article>
   </main>
 
