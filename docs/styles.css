@@ -128,6 +128,21 @@ a { color: inherit; text-underline-offset: .19em; }
 .assembly-middle { inset: 22% auto auto 24%; color: #202020; }
 .assembly-top { inset: 1% auto auto 44%; color: #f9f7f3; }
 
+@media (prefers-reduced-motion: no-preference) {
+  .assembly-piece {
+    animation: assembly-settle 580ms cubic-bezier(.16, 1, .3, 1) backwards;
+  }
+
+  .assembly-base { --assembly-offset: 4px; }
+  .assembly-middle { --assembly-offset: 8px; animation-delay: 55ms; }
+  .assembly-top { --assembly-offset: 12px; animation-delay: 110ms; }
+
+  @keyframes assembly-settle {
+    from { transform: translate(var(--assembly-offset), calc(-1 * var(--assembly-offset))); }
+    to { transform: translate(0, 0); }
+  }
+}
+
 .projects { padding-block: clamp(3.5rem, 7vw, 6rem); }
 .section-title {
   font: 740 clamp(2.6rem, 5vw, 4.5rem)/1 var(--display);
