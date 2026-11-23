@@ -20,7 +20,7 @@
   --body: #3a3a3a;
   --muted: #646464;
   --line: rgb(32 32 32 / 15%);
-  --orange: #ea2804;
+  --hero-green: #00814c;
   --pressed: #ad270c;
   --light: #fcfcfc;
   --display: 'Bricolage Grotesque', Geist, system-ui, sans-serif;
@@ -67,11 +67,11 @@ a { color: inherit; text-underline-offset: .19em; }
 }
 
 .intro {
-  background: #ba290f;
+  background: #00603c;
   background-image:
-    radial-gradient(ellipse at 95% 92%, #f4a8a0 0, transparent 53%),
-    radial-gradient(ellipse at 82% 14%, #ff7046 0, transparent 52%),
-    linear-gradient(112deg, #ac250f 2%, #c12b11 39%, var(--orange) 71%);
+    radial-gradient(ellipse 47% 116% at 100% 100%, #a8e9a3 0, transparent 100%),
+    radial-gradient(ellipse 43% 102% at 91% 6%, #2ccc78 0, transparent 100%),
+    linear-gradient(90deg, #005337, #00603c 44%, var(--hero-green) 71%);
   color: var(--light);
   overflow: hidden;
 }
@@ -85,11 +85,12 @@ a { color: inherit; text-underline-offset: .19em; }
 }
 
 .intro-copy { position: relative; z-index: 1; }
+.intro ::selection { background: #003d28; }
 .intro h1 {
   font: 780 clamp(3.6rem, 8.6vw, 8rem)/.93 var(--display);
   letter-spacing: -.027em;
 }
-.intro h1 span { color: #ffc2ad; }
+.intro h1 span { color: #a8edaa; }
 .intro p { max-inline-size: 36ch; margin-block-start: 24px; font-size: clamp(1rem, 1.7vw, 1.125rem); }
 .intro-link, .project-links a {
   display: inline-flex;
@@ -123,7 +124,7 @@ a { color: inherit; text-underline-offset: .19em; }
   border: clamp(14px, 2.5vw, 33px) solid;
 }
 
-.assembly-base { inset: 43% auto auto 4%; color: #7e200e; }
+.assembly-base { inset: 43% auto auto 4%; color: #005c3d; }
 .assembly-middle { inset: 22% auto auto 24%; color: #202020; }
 .assembly-top { inset: 1% auto auto 44%; color: #f9f7f3; }
 
@@ -257,8 +258,8 @@ progress::-moz-progress-bar { background: var(--ink); border-radius: 999px; }
 @media (max-width: 760px) {
   .intro {
     background-image:
-      radial-gradient(ellipse at 100% 100%, #f4a8a0, transparent 33%),
-      linear-gradient(175deg, #a8260f 0%, #b42b12 66%, #ea512c 100%);
+      radial-gradient(ellipse 43% 31% at 100% 100%, #a8e9a3, transparent 100%),
+      linear-gradient(175deg, #005337 0%, #00603c 66%, #069452 100%);
   }
   .intro-layout { grid-template-columns: 1fr auto; }
   .assembly { position: absolute; inset: auto 0 8% auto; width: clamp(7.5rem, 27vw, 15rem); }
