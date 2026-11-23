@@ -1,6 +1,7 @@
 const projects = [
   {
     id: 'cellar-dweller',
+    slug: 'cellar-dwellers',
     name: 'Cellar Dwellers',
     description: 'Scan a wine label to discover a collectible mythical character and story inspired by the bottle, its producer and its region. Each character joins a gallery you can build and share.',
     status: 'in-progress',

@@ -59,7 +59,7 @@ function renderProject(project) {
   if (project.pitch?.length || project.screenshots?.length) {
     projectLinks.unshift({
       label: project.pitch?.length ? 'Read the pitch' : 'View screenshots',
-      url: `./project.html?id=${encodeURIComponent(project.id)}`,
+      url: `./project.html?id=${encodeURIComponent(project.slug ?? project.id)}`,
     });
   }
   if (projectLinks.length) {
@@ -134,14 +134,20 @@ function renderProjectDetails() {
     return;
   }
 
-  const id = new URLSearchParams(location.search).get('id');
-  const project = projects.find(project => project.id === id);
+  const url = new URL(location.href);
+  const id = url.searchParams.get('id');
+  const project = projects.find(project => project.slug === id || project.id === id);
   if (!project) {
     message.textContent = 'Project not found. ';
     const link = element('a', 'Browse projects');
     link.href = './index.html#projects';
     message.append(link);
     return;
+  }
+
+  if (project.slug && id !== project.slug && url.protocol !== 'file:') {
+    url.searchParams.set('id', project.slug);
+    history.replaceState(history.state, '', url);
   }
 
   document.title = `${project.name} — Build a Thing`;
