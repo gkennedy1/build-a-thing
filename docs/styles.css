@@ -62,17 +62,6 @@ a { color: inherit; text-underline-offset: .19em; }
 .site-header nav a:hover { background: var(--bone); }
 .site-header .github-link { border: 1px solid var(--line); padding-inline: 16px; }
 .wordmark { gap: 9px; font: 750 1.25rem/1 var(--wordmark); letter-spacing: -.025em; }
-.brand-mark { width: 20px; height: 20px; position: relative; }
-.brand-mark::before {
-  content: '';
-  position: absolute;
-  inset: 1px auto auto 11px;
-  width: 8px;
-  height: 8px;
-  background: currentColor;
-  border-radius: 2px;
-  box-shadow: 0 10px currentColor, -10px 10px currentColor;
-}
 
 .intro {
   position: relative;

@@ -1,0 +1,99 @@
+[31464200ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[31464201ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25285
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25362
+    at new Promise (<anonymous>)
+    at r$._refreshAccessToken (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25216)
+    at r$._callRefreshToken (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:27965)
+    at r$.__loadSession (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:14186) @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[31464446ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[31464446ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at async https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25279 @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[31464864ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[31464864ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at async https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25279 @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[31465682ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[31465682ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at async https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25279 @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[31467299ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[31467299ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at async https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25279 @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[35754658ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[35754658ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at async https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25279 @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[35754864ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[35754864ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25285
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25362
+    at new Promise (<anonymous>)
+    at r$._refreshAccessToken (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25216)
+    at r$._callRefreshToken (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:27965)
+    at r$.__loadSession (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:14186) @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[35756929ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[35756929ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at async https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25279 @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[35757403ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[35757403ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at async https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25279 @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[35778829ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[35778829ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at async https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25279 @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[46269048ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[46269048ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at async https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25279 @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
+[46271796ms] [ERROR] Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED @ https://wulnamjkguypdbzwdhhi.supabase.co/auth/v1/token?grant_type=refresh_token:1
+[46271796ms] [ERROR] TypeError: Failed to fetch
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:35447
+    at t5 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:40411)
+    at t8 (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24:39939)
+    at r (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25022)
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25285
+    at https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25362
+    at new Promise (<anonymous>)
+    at r$._refreshAccessToken (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:25216)
+    at r$._callRefreshToken (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:27965)
+    at r$.__loadSession (https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:37:14186) @ https://the-fermented-bazaar.vercel.app/_next/static/chunks/0zzwc4li2gqw3.js:24
