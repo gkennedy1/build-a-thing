@@ -1,11 +1,11 @@
 const projects = [
   {
     id: 'cellar-dweller',
-    name: 'Cellar Dweller',
+    name: 'Cellar Dwellers',
     description: 'Scan a wine label to discover a collectible mythical character and story inspired by the bottle, its producer and its region. Each character joins a gallery you can build and share.',
     status: 'in-progress',
     links: [
-      { label: 'Visit Cellar Dweller', url: 'https://the-fermented-bazaar.vercel.app/' },
+      { label: 'Visit Cellar Dwellers', url: 'https://the-fermented-bazaar.vercel.app/' },
     ],
     milestones: [
       { label: 'Build wine label scanning and research', done: true },
@@ -14,11 +14,11 @@ const projects = [
       { label: 'Validate the experience with a small private beta', done: false },
     ],
     updates: [
-      { date: '2026-11-23', text: 'Added Cellar Dweller to the tracker. The core scanning, character generation and gallery are built, with a small private beta up next.' },
+      { date: '2026-11-23', text: 'Added Cellar Dwellers to the tracker. The core scanning, character generation and gallery are built, with a small private beta up next.' },
     ],
     pitch: [
       'Wine discovery can feel like homework when the first things you encounter are scores, tasting jargon and rules about what to buy. I wanted a way to remember a bottle by what made it interesting and where I found it.',
-      'Cellar Dweller turns a label scan into a mythical character. AI researches the wine and uses details like the producer, region, vintage and label to create an original portrait and story. The character goes into a gallery that grows with every bottle you explore.',
+      'Cellar Dwellers turns a label scan into a mythical character. AI researches the wine and uses details like the producer, region, vintage and label to create an original portrait and story. The character goes into a gallery that grows with every bottle you explore.',
       'The idea is to give curious wine drinkers a reason to try unfamiliar bottles, visit wineries and share what they’ve discovered. It also gives producers a new way to tell the stories behind their wines.',
     ],
     screenshots: [
@@ -40,7 +40,7 @@ const projects = [
         src: './images/cellar-dweller/beta-landing.jpg',
         width: 1200,
         height: 800,
-        alt: 'Cellar Dweller’s beta landing screen beside Aniscar Valehorn, a mythical bull inspired by a McLaren Vale Tempranillo.',
+        alt: 'The Cellar Dwellers beta landing screen beside Aniscar Valehorn, a mythical bull inspired by a McLaren Vale Tempranillo.',
         caption: 'The private beta landing page and an example of a summoned character.',
       },
       {
