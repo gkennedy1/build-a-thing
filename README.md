@@ -10,4 +10,4 @@ Add milestones in order and set `done` to `true` as you complete them. The site 
 
 ## Publishing
 
-In this repository’s GitHub **Settings → Pages**, select **Deploy from a branch**, choose **main** and **/docs**, and save. The expected URL is [gkennedy1.github.io/build-a-thing](https://gkennedy1.github.io/build-a-thing/). After setup, pushes to `main` publish automatically. GitHub Pages can take a few minutes to serve changes.
+GitHub Pages publishes from `main` and `/docs` to [gkennedy1.github.io/build-a-thing](https://gkennedy1.github.io/build-a-thing/). Pushes to `main` publish automatically. GitHub Pages can take a few minutes to serve changes. The source is configured under **Settings → Pages**.
