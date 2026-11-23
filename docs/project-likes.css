@@ -1,0 +1,21 @@
+.project-reaction { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.project-reaction button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-block-size: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--canvas);
+  color: var(--ink);
+  font: 600 .875rem/1.3 var(--sans);
+  cursor: pointer;
+}
+.project-reaction button:hover:not(:disabled) { background: var(--bone); }
+.project-reaction button[data-liked] { background: #e4f3e9; color: #145a3c; }
+.project-reaction svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+.project-reaction button[data-liked] svg { fill: currentColor; }
+.project-reaction button:disabled { cursor: default; }
+.like-count { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--muted); font-size: .875rem; }
+.like-message:not(:empty) { margin-block-start: 8px; font-size: .875rem; }

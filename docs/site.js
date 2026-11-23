@@ -190,6 +190,7 @@ function renderProjectDetails() {
 
   message.hidden = true;
   document.querySelector('#project-detail').hidden = false;
+  if (typeof initProjectLikes === 'function') initProjectLikes(project.id);
 }
 
 if (projectList) renderHome();

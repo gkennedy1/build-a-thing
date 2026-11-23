@@ -12,6 +12,10 @@ Add milestones in order and set `done` to `true` as you complete them. The site 
 
 Use the optional `pitch` array for paragraphs about why you’re building a project. Use `screenshots` for images, each with a relative `src`, `width`, `height`, `alt` text and `caption`. Either field adds a project details link to the tracker. Store screenshots under `docs/images/`.
 
+## Project likes
+
+The detail pages use [Abacus](https://v2.jasoncameron.dev/abacus/) for shared like counts. Each project has a public counter keyed by its stable `id`, created on the first like. The browser remembers its like in local storage. This is an informal count, so clearing browser storage or using another browser allows another like. Abacus expires counters after six months without access.
+
 ## Publishing
 
 GitHub Pages publishes from `main` and `/docs` to [gkennedy1.github.io/build-a-thing](https://gkennedy1.github.io/build-a-thing/). Pushes to `main` publish automatically. GitHub Pages can take a few minutes to serve changes. The source is configured under **Settings → Pages**.
