@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Follow Greg Kennedy’s side projects, their current status and what’s next.">
+  <meta name="theme-color" content="#000000">
+  <title>Build a Thing — Greg Kennedy</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./projects.js" defer></script>
+  <script src="./site.js" defer></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="wordmark" href="./">Build a Thing</a>
+    <nav aria-label="Main navigation">
+      <a href="#projects">Projects</a>
+      <a href="#updates">Updates</a>
+      <a href="https://github.com/gkennedy1" class="github-link">GitHub</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="site-title">
+      <div class="intro-copy">
+        <h1 id="site-title">What I’m building</h1>
+        <p>Side projects by Greg Kennedy. See what’s underway, what’s shipped, and what’s coming next.</p>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <section aria-labelledby="projects">
+        <h2 id="projects" class="section-title" tabindex="-1">Projects</h2>
+        <div class="filters" role="group" aria-label="Filter projects by status" hidden></div>
+        <p class="visually-hidden" id="results" role="status"></p>
+        <div id="project-list"><p class="muted">Loading projects…</p></div>
+        <noscript>Enable JavaScript to view the project list.</noscript>
+      </section>
+      <section class="updates" aria-labelledby="updates">
+        <h2 id="updates" class="section-title" tabindex="-1">Recent updates</h2>
+        <ol id="update-list"></ol>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer wrap">
+    <span>Build a Thing · Greg Kennedy</span>
+    <a href="https://github.com/gkennedy1/build-a-thing">View source on GitHub</a>
+  </footer>
+</body>
+</html>
