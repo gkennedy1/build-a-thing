@@ -58,7 +58,7 @@ function renderProject(project) {
   const projectLinks = [...project.links];
   if (project.pitch?.length || project.screenshots?.length) {
     projectLinks.unshift({
-      label: project.pitch?.length ? 'Read the pitch' : 'View screenshots',
+      label: 'Read More',
       url: `./project.html?id=${encodeURIComponent(project.slug ?? project.id)}`,
     });
   }
