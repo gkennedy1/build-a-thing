@@ -17,6 +17,14 @@ function element(tag, content, className) {
   return node;
 }
 
+function renderLinks(links, container) {
+  for (const { label, url } of links) {
+    const anchor = element('a', label);
+    anchor.href = url;
+    container.append(anchor);
+  }
+}
+
 function renderProject(project) {
   const article = element('article', undefined, 'project');
   article.id = project.id;
@@ -47,13 +55,16 @@ function renderProject(project) {
     article.append(progress);
   }
 
-  if (project.links.length) {
+  const projectLinks = [...project.links];
+  if (project.pitch?.length || project.screenshots?.length) {
+    projectLinks.unshift({
+      label: project.pitch?.length ? 'Read the pitch' : 'View screenshots',
+      url: `./project.html?id=${encodeURIComponent(project.id)}`,
+    });
+  }
+  if (projectLinks.length) {
     const links = element('div', undefined, 'project-links');
-    for (const link of project.links) {
-      const anchor = element('a', link.label);
-      anchor.href = link.url;
-      links.append(anchor);
-    }
+    renderLinks(projectLinks, links);
     body.append(links);
   }
   return article;
@@ -94,10 +105,13 @@ function renderUpdates() {
   if (!updates.length) updateList.append(element('li', 'No updates yet.', 'muted'));
 }
 
-if (typeof projects === 'undefined') {
-  projectList.replaceChildren(element('p', 'Projects couldn’t load. Refresh the page to try again.', 'empty'));
-  updateList.append(element('li', 'Updates couldn’t load.', 'muted'));
-} else {
+function renderHome() {
+  if (typeof projects === 'undefined') {
+    projectList.replaceChildren(element('p', 'Projects couldn’t load. Refresh the page to try again.', 'empty'));
+    updateList.append(element('li', 'Updates couldn’t load.', 'muted'));
+    return;
+  }
+
   const activeStatuses = Object.entries(statuses).filter(([status]) => projects.some(project => project.status === status));
   if (activeStatuses.length > 1) {
     for (const [status, label] of [['all', 'All projects'], ...activeStatuses]) {
@@ -112,3 +126,65 @@ if (typeof projects === 'undefined') {
   renderProjects();
   renderUpdates();
 }
+
+function renderProjectDetails() {
+  const message = document.querySelector('#detail-message');
+  if (typeof projects === 'undefined') {
+    message.textContent = 'Project details couldn’t load. Refresh the page to try again.';
+    return;
+  }
+
+  const id = new URLSearchParams(location.search).get('id');
+  const project = projects.find(project => project.id === id);
+  if (!project) {
+    message.textContent = 'Project not found. ';
+    const link = element('a', 'Browse projects');
+    link.href = './index.html#projects';
+    message.append(link);
+    return;
+  }
+
+  document.title = `${project.name} — Build a Thing`;
+  document.querySelector('#project-title').textContent = project.name;
+  document.querySelector('#project-description').textContent = project.description;
+  const status = document.querySelector('#project-status');
+  status.textContent = statuses[project.status];
+  status.className = `status ${project.status}`;
+
+  if (project.links.length) {
+    const links = document.querySelector('#detail-links');
+    renderLinks(project.links, links);
+    links.hidden = false;
+  }
+
+  if (project.pitch?.length) {
+    const pitch = document.querySelector('#pitch-copy');
+    pitch.append(...project.pitch.map(paragraph => element('p', paragraph)));
+    document.querySelector('#pitch').hidden = false;
+  }
+
+  if (project.screenshots?.length) {
+    const gallery = document.querySelector('#screenshot-grid');
+    for (const screenshot of project.screenshots) {
+      const figure = element('figure');
+      const image = element('img');
+      image.src = screenshot.src;
+      image.alt = screenshot.alt;
+      image.width = screenshot.width;
+      image.height = screenshot.height;
+      image.loading = 'lazy';
+      const link = element('a');
+      link.href = screenshot.src;
+      link.append(image);
+      figure.append(link, element('figcaption', screenshot.caption));
+      gallery.append(figure);
+    }
+    document.querySelector('#screenshots').hidden = false;
+  }
+
+  message.hidden = true;
+  document.querySelector('#project-detail').hidden = false;
+}
+
+if (projectList) renderHome();
+else renderProjectDetails();

@@ -203,6 +203,7 @@ progress::-webkit-progress-value { background: var(--ink); border-radius: 999px;
 progress::-moz-progress-bar { background: var(--ink); border-radius: 999px; }
 .next-step { margin-block-start: 8px; font-size: .875rem; }
 .project-links { display: flex; flex-wrap: wrap; gap: 8px; margin-block-start: 20px; }
+.project-links[hidden] { display: none; }
 .project-links a { border: 1px solid var(--line); font-size: .875rem; }
 .project-links a:hover { background: var(--bone); }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-block-end: 16px; }
@@ -255,6 +256,34 @@ progress::-moz-progress-bar { background: var(--ink); border-radius: 999px; }
 .site-footer a { display: inline-flex; min-block-size: 44px; align-items: center; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
+.project-detail { min-block-size: 60vh; padding-block: clamp(3rem, 7vw, 6rem); }
+.detail-header { max-inline-size: 70ch; }
+.detail-title { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px 20px; }
+.detail-title h1 {
+  font: 760 clamp(3rem, 8vw, 6rem)/.96 var(--display);
+  letter-spacing: -.03em;
+  overflow-wrap: anywhere;
+}
+.detail-header > p { margin-block-start: 18px; color: var(--body); font-size: 1.125rem; }
+.detail-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr);
+  align-items: start;
+  gap: 20px 32px;
+  border-block-start: 1px solid var(--line);
+  margin-block-start: clamp(2.5rem, 6vw, 5rem);
+  padding-block-start: clamp(2rem, 4vw, 3.5rem);
+}
+.detail-section[hidden] { display: none; }
+.detail-section .section-title { font-size: clamp(2rem, 4vw, 3.5rem); overflow-wrap: anywhere; }
+.pitch-copy { max-inline-size: 65ch; color: var(--body); font-size: 1.0625rem; }
+.pitch-copy p + p { margin-block-start: 1em; }
+.screenshot-grid { display: grid; gap: 24px; align-items: start; }
+.screenshot-grid figure { margin: 0; }
+.screenshot-grid a { display: inline-block; max-inline-size: 100%; vertical-align: top; border-radius: 12px; }
+.screenshot-grid img { display: block; max-inline-size: 100%; block-size: auto; border-radius: inherit; }
+.screenshot-grid figcaption { margin-block-start: 8px; color: var(--muted); font-size: .875rem; }
+
 @media (max-width: 760px) {
   .intro {
     background-image:
@@ -265,7 +294,7 @@ progress::-moz-progress-bar { background: var(--ink); border-radius: 999px; }
   .assembly { position: absolute; inset: auto 0 8% auto; width: clamp(7.5rem, 27vw, 15rem); }
   .intro-copy { max-inline-size: 100%; }
   .intro p { max-inline-size: 30ch; }
-  .project, .updates-layout { grid-template-columns: minmax(0, 1fr); }
+  .project, .updates-layout, .detail-section { grid-template-columns: minmax(0, 1fr); }
   .updates h2 { max-inline-size: none; }
 }
 

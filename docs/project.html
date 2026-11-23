@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f7f3">
+  <meta name="description" content="Read the pitch and see screenshots from projects on Build a Thing.">
+  <title>Project — Build a Thing</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23202020'/%3E%3Cpath fill='%23f9f7f3' d='M7 18h8v8H7zm10-12h8v8h-8zm0 12h8v8h-8z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css?v=4">
+  <script src="./projects.js?v=2" defer></script>
+  <script src="./site.js?v=3" defer></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="wordmark" href="./index.html"><span class="brand-mark" aria-hidden="true"></span>Build a Thing</a>
+    <nav aria-label="Main navigation">
+      <a href="./index.html#projects">Projects</a>
+      <a href="./index.html#updates">Updates</a>
+      <a href="https://github.com/gkennedy1" class="github-link">GitHub</a>
+    </nav>
+  </header>
+
+  <main class="project-detail wrap">
+    <p id="detail-message" role="status">Loading project…</p>
+    <noscript>Enable JavaScript to view project details.</noscript>
+    <article id="project-detail" aria-labelledby="project-title" hidden>
+      <header class="detail-header">
+        <div class="detail-title">
+          <h1 id="project-title"></h1>
+          <span id="project-status"></span>
+        </div>
+        <p id="project-description"></p>
+        <div id="detail-links" class="project-links" hidden></div>
+      </header>
+
+      <section id="pitch" class="detail-section" aria-labelledby="pitch-title" hidden>
+        <h2 id="pitch-title" class="section-title">Pitch</h2>
+        <div id="pitch-copy" class="pitch-copy"></div>
+      </section>
+
+      <section id="screenshots" class="detail-section" aria-labelledby="screenshots-title" hidden>
+        <h2 id="screenshots-title" class="section-title">Screenshots</h2>
+        <div id="screenshot-grid" class="screenshot-grid"></div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-layout wrap">
+      <span>Build a Thing · Greg Kennedy</span>
+      <a href="https://github.com/gkennedy1/build-a-thing">View source on GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
