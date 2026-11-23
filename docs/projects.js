@@ -13,6 +13,7 @@ const projects = [
       { label: 'Publish the site on GitHub Pages', done: true },
     ],
     updates: [
+      { date: '2026-11-23', text: 'Redesigned the tracker with bolder typography and a dedicated section for recent updates.' },
       { date: '2026-11-23', text: 'Launched the project tracker on GitHub Pages. This site is the first entry.' },
     ],
   },

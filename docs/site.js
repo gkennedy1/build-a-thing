@@ -24,7 +24,8 @@ function renderProject(project) {
   header.append(element('h3', project.name));
   header.append(element('span', statuses[project.status], `status ${project.status}`));
   const body = element('div', undefined, 'project-body');
-  body.append(element('p', project.description));
+  body.append(header, element('p', project.description));
+  article.append(body);
 
   if (project.milestones.length) {
     const completed = project.milestones.filter(milestone => milestone.done).length;
@@ -43,7 +44,7 @@ function renderProject(project) {
       nextStep.append(element('strong', 'Up next'), ` ${next.label}`);
       progress.append(nextStep);
     }
-    body.append(progress);
+    article.append(progress);
   }
 
   if (project.links.length) {
@@ -55,7 +56,6 @@ function renderProject(project) {
     }
     body.append(links);
   }
-  article.append(header, body);
   return article;
 }
 
