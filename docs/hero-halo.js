@@ -4,7 +4,7 @@
 
   const canvas = halo.querySelector('canvas');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  // Let the ambient motion settle while keeping the halo responsive to the cursor.
+  // Let the ambient motion settle while keeping the halo responsive to input.
   const ambientSeconds = 4.2;
   let render;
   let visible = false;
@@ -66,8 +66,8 @@
     sync();
   }
 
-  halo.parentElement.addEventListener('pointermove', event => {
-    if (event.pointerType === 'touch' || !shouldRender()) return;
+  function respondToPointer(event) {
+    if (!shouldRender() || (event.pointerType === 'touch' && !event.isPrimary)) return;
     const { left, top, width, height } = halo.getBoundingClientRect();
     const x = (event.clientX - left - width * 0.52) / height;
     const y = (top + height * 0.48 - event.clientY) / height;
@@ -76,8 +76,20 @@
     pointerAngle = Math.atan2(y, x);
     pointerExpiry = performance.now() + 700;
     sync();
+  }
+
+  const hero = halo.parentElement;
+  hero.addEventListener('pointermove', respondToPointer);
+  hero.addEventListener('pointerdown', event => {
+    if (event.pointerType === 'touch') respondToPointer(event);
   });
-  halo.parentElement.addEventListener('pointerleave', () => { pointerEnergy = 0; });
+  hero.addEventListener('pointerleave', event => {
+    // A tap also emits pointerleave. Give its shimmer time to play.
+    if (event.pointerType !== 'touch') pointerEnergy = 0;
+  });
+  hero.addEventListener('pointercancel', event => {
+    if (event.isPrimary) pointerEnergy = 0;
+  });
   canvas.addEventListener('webglcontextlost', event => {
     event.preventDefault();
     cancelAnimationFrame(request);
