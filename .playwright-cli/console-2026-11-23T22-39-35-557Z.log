@@ -1,3 +1,0 @@
-[    1985ms] [INFO] Images loaded lazily and replaced with placeholders. Load events are deferred. See https://go.microsoft.com/fwlink/?linkid=2048113 @ http://127.0.0.1:8774/project.html?id=cellar-dwellers:1
-[    1994ms] [ERROR] Access to fetch at 'http://127.0.0.1:8787/likes?project=cellar-dweller' from origin 'http://127.0.0.1:8774' has been blocked by CORS policy: Permission was denied for this request to access the `loopback` address space. @ http://127.0.0.1:8774/project.html?id=cellar-dwellers:1
-[    1994ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://127.0.0.1:8787/likes?project=cellar-dweller:1
