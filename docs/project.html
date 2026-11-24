@@ -7,12 +7,12 @@
   <meta name="description" content="Read the pitch and see screenshots from projects on Build a Thing.">
   <title>Project — Build a Thing</title>
   <link rel="icon" type="image/svg+xml" href="./project-roll.svg">
-  <link rel="stylesheet" href="./styles.css?v=9">
+  <link rel="stylesheet" href="./styles.css?v=15">
   <link rel="stylesheet" href="./project-likes.css">
   <script src="./projects.js?v=6" defer></script>
   <script src="./project-likes.js" defer></script>
-  <script src="./site.js?v=6" defer></script>
-  <script src="./roll-scenes.js" defer></script>
+  <script src="./site.js?v=9" defer></script>
+  <script src="./roll-scenes.js?v=7" defer></script>
 </head>
 <body>
   <header class="site-header wrap">
@@ -63,13 +63,33 @@
         </div>
       </section>
 
-      <section id="screenshots" class="detail-section" aria-labelledby="screenshots-title" hidden>
+      <section id="screenshots" class="detail-section detail-screenshots" aria-labelledby="screenshots-title" hidden>
         <h2 id="screenshots-title" class="section-title">Screenshots</h2>
         <div id="screenshot-grid" class="screenshot-grid"></div>
       </section>
       <div class="roll-scene roll-scene--bottom" data-roll-scene="arcade" aria-hidden="true"></div>
     </article>
   </main>
+
+  <dialog class="screenshot-viewer" aria-label="Project screenshots">
+    <figure class="screenshot-viewer-figure">
+      <div class="screenshot-viewer-image">
+        <button type="button" data-viewer-close aria-label="Close" autofocus>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+        <div class="screenshot-viewer-nav" role="group" aria-label="Browse screenshots">
+          <button type="button" data-viewer-previous aria-label="Previous screenshot">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>
+          </button>
+          <span data-viewer-position role="status"></span>
+          <button type="button" data-viewer-next aria-label="Next screenshot">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+      <figcaption id="screenshot-viewer-caption"></figcaption>
+    </figure>
+  </dialog>
 
   <footer class="site-footer">
     <div class="footer-layout wrap">

@@ -170,6 +170,94 @@ function renderHome() {
   renderUpdates();
 }
 
+function renderScreenshots(screenshots) {
+  const gallery = document.querySelector('#screenshot-grid');
+  const viewer = document.querySelector('.screenshot-viewer');
+  const canEnlarge = typeof viewer?.showModal === 'function';
+  const frames = screenshots.map(screenshot => {
+    const figure = element('figure', undefined, screenshot.height > screenshot.width ? 'screenshot-portrait' : undefined);
+    const image = element('img');
+    image.src = screenshot.src;
+    image.alt = screenshot.alt;
+    image.width = screenshot.width;
+    image.height = screenshot.height;
+    image.loading = 'lazy';
+    const frame = element(canEnlarge ? 'button' : 'div', undefined, 'screenshot-frame');
+    if (canEnlarge) {
+      frame.type = 'button';
+      frame.setAttribute('aria-haspopup', 'dialog');
+    }
+    frame.append(image);
+    figure.append(frame, element('figcaption', screenshot.caption));
+    gallery.append(figure);
+    return frame;
+  });
+  document.querySelector('#screenshots').hidden = false;
+  if (!canEnlarge) return;
+
+  const image = element('img');
+  const stage = viewer.querySelector('.screenshot-viewer-image');
+  stage.prepend(image);
+  const caption = viewer.querySelector('#screenshot-viewer-caption');
+  const position = viewer.querySelector('[data-viewer-position]');
+  const navigation = viewer.querySelector('.screenshot-viewer-nav');
+  navigation.hidden = screenshots.length === 1;
+  let active = 0;
+  let opener;
+  let swipeStart;
+
+  function showScreenshot(index) {
+    active = (index + screenshots.length) % screenshots.length;
+    const screenshot = screenshots[active];
+    image.alt = screenshot.alt;
+    image.src = screenshot.src;
+    viewer.style.setProperty('--screenshot-ratio', screenshot.width / screenshot.height);
+    caption.textContent = screenshot.caption;
+    position.textContent = `${active + 1} of ${screenshots.length}`;
+  }
+
+  frames.forEach((frame, index) => {
+    frame.addEventListener('click', () => {
+      opener = frame;
+      showScreenshot(index);
+      viewer.showModal();
+    });
+  });
+
+  viewer.querySelector('[data-viewer-close]').addEventListener('click', () => viewer.close());
+  viewer.querySelector('[data-viewer-previous]').addEventListener('click', () => showScreenshot(active - 1));
+  viewer.querySelector('[data-viewer-next]').addEventListener('click', () => showScreenshot(active + 1));
+  viewer.addEventListener('click', event => {
+    if (event.target === viewer) viewer.close();
+  });
+  viewer.addEventListener('keydown', event => {
+    if (navigation.hidden || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    showScreenshot(active + (event.key === 'ArrowLeft' ? -1 : 1));
+  });
+  stage.addEventListener('pointerdown', event => {
+    if (navigation.hidden || event.pointerType !== 'touch' || !event.isPrimary || event.target.closest('button')) return;
+    swipeStart = { id: event.pointerId, x: event.clientX, y: event.clientY };
+  });
+  stage.addEventListener('pointerup', event => {
+    if (event.pointerId !== swipeStart?.id) return;
+    const dx = event.clientX - swipeStart.x;
+    const dy = event.clientY - swipeStart.y;
+    swipeStart = undefined;
+    if (Math.abs(dx) >= 48 && Math.abs(dx) > Math.abs(dy) * 1.25) {
+      showScreenshot(active + (dx < 0 ? 1 : -1));
+    }
+  });
+  stage.addEventListener('pointercancel', event => {
+    if (event.pointerId === swipeStart?.id) swipeStart = undefined;
+  });
+  viewer.addEventListener('close', () => {
+    swipeStart = undefined;
+    opener?.focus({ preventScroll: true });
+  });
+}
+
 function renderProjectDetails() {
   const message = document.querySelector('#detail-message');
   if (typeof projects === 'undefined') {
@@ -212,24 +300,7 @@ function renderProjectDetails() {
     document.querySelector('#pitch').hidden = false;
   }
 
-  if (project.screenshots?.length) {
-    const gallery = document.querySelector('#screenshot-grid');
-    for (const screenshot of project.screenshots) {
-      const figure = element('figure');
-      const image = element('img');
-      image.src = screenshot.src;
-      image.alt = screenshot.alt;
-      image.width = screenshot.width;
-      image.height = screenshot.height;
-      image.loading = 'lazy';
-      const link = element('a');
-      link.href = screenshot.src;
-      link.append(image);
-      figure.append(link, element('figcaption', screenshot.caption));
-      gallery.append(figure);
-    }
-    document.querySelector('#screenshots').hidden = false;
-  }
+  if (project.screenshots?.length) renderScreenshots(project.screenshots);
 
   message.hidden = true;
   document.querySelector('#project-detail').hidden = false;

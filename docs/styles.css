@@ -373,11 +373,132 @@ progress::-moz-progress-bar { background: var(--ink); border-radius: 999px; }
 .detail-section .section-title { font-size: clamp(2rem, 4vw, 3.5rem); overflow-wrap: anywhere; }
 .pitch-copy { max-inline-size: 65ch; color: var(--body); font-size: 1.0625rem; }
 .pitch-copy p + p { margin-block-start: 1em; }
-.screenshot-grid { display: grid; gap: 24px; align-items: start; }
+.detail-screenshots { grid-template-columns: minmax(0, 1fr); }
+.screenshot-grid { display: grid; gap: clamp(1rem, 2vw, 1.75rem); align-items: start; }
 .screenshot-grid figure { margin: 0; }
-.screenshot-grid a { display: inline-block; max-inline-size: 100%; vertical-align: top; border-radius: 12px; }
-.screenshot-grid img { display: block; max-inline-size: 100%; block-size: auto; border-radius: inherit; }
-.screenshot-grid figcaption { margin-block-start: 8px; color: var(--muted); font-size: .875rem; }
+.screenshot-frame {
+  display: grid;
+  place-items: center;
+  inline-size: 100%;
+  padding: clamp(.75rem, 2vw, 1.5rem);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bone);
+}
+
+button.screenshot-frame { cursor: zoom-in; }
+
+.screenshot-frame img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+  border-radius: 6px;
+}
+
+.screenshot-portrait img { max-inline-size: min(100%, 13.5rem); }
+.screenshot-grid figcaption {
+  max-inline-size: 64ch;
+  margin-block-start: 8px;
+  color: var(--muted);
+  font-size: .875rem;
+}
+
+@media (min-width: 701px) {
+  .screenshot-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .screenshot-grid figure { grid-column: span 2; }
+  .screenshot-grid .screenshot-portrait { grid-column: span 1; }
+  .screenshot-grid figure:has(+ .screenshot-portrait):not(.screenshot-portrait) { grid-column: span 3; }
+  .screenshot-grid figure:only-child:not(.screenshot-portrait) { grid-column: 1 / -1; }
+  .screenshot-frame { block-size: clamp(19rem, 44vw, 35rem); }
+  .screenshot-frame img { inline-size: 100%; block-size: 100%; min-block-size: 0; object-fit: contain; }
+  .screenshot-portrait img { max-inline-size: 100%; }
+}
+
+.screenshot-viewer {
+  inline-size: min(calc(100% - 2rem), 72rem, calc(min(78dvh, 48rem) * var(--screenshot-ratio, 1)));
+  min-inline-size: min(calc(100% - 2rem), 11rem);
+  max-block-size: calc(100dvh - 2rem);
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+.screenshot-viewer:not([open]) { display: none; }
+.screenshot-viewer::backdrop { background: rgb(0 0 0 / 74%); }
+.screenshot-viewer-figure { display: flex; flex-direction: column; margin: 0; max-block-size: calc(100dvh - 2rem - 2px); }
+.screenshot-viewer-image {
+  position: relative;
+  aspect-ratio: var(--screenshot-ratio, 1);
+  max-block-size: min(78dvh, 48rem);
+  min-block-size: 5rem;
+  background: var(--ink);
+  touch-action: pan-y pinch-zoom;
+}
+
+.screenshot-viewer-image img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.screenshot-viewer-figure figcaption {
+  padding: 12px clamp(.75rem, 2.5vw, 1.5rem);
+  color: var(--body);
+  font-size: .875rem;
+}
+
+.screenshot-viewer-nav,
+.screenshot-viewer [data-viewer-close] {
+  position: absolute;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 999px;
+  background: rgb(24 24 24 / 90%);
+  color: var(--light);
+}
+
+.screenshot-viewer [data-viewer-close] { inset: .75rem .75rem auto auto; }
+.screenshot-viewer-nav {
+  inset: auto auto .75rem 50%;
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px;
+}
+
+.screenshot-viewer-nav[hidden] { display: none; }
+.screenshot-viewer-nav span { white-space: nowrap; font-size: .875rem; font-variant-numeric: tabular-nums; }
+.screenshot-viewer button {
+  display: grid;
+  place-items: center;
+  inline-size: 44px;
+  block-size: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.screenshot-viewer-nav button:hover { background: rgb(255 255 255 / 14%); }
+.screenshot-viewer [data-viewer-close]:hover { background: var(--ink); }
+.screenshot-viewer button:focus-visible { outline-offset: -3px; }
+.screenshot-viewer button svg {
+  inline-size: 20px;
+  block-size: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+html:has(.screenshot-viewer[open]) { overflow: hidden; }
 
 @media (max-width: 760px) {
   .intro {

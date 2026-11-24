@@ -14,8 +14,9 @@
   const scenes = {
     desk: ['pencil', 'note'],
     workbench: ['block', 'gear'],
-    arcade: ['die', 'star', 'pencil', 'note', 'block', 'gear', 'key', 'leaf', 'bolt', 'button']
+    arcade: ['die', 'star']
   };
+  const extraPickups = ['pencil', 'note', 'block', 'gear', 'key', 'leaf', 'bolt', 'button'];
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const radius = 13;
@@ -217,7 +218,9 @@
   }, { threshold: .6 }) : null;
 
   for (const scene of document.querySelectorAll('[data-roll-scene]')) {
-    const objects = scenes[scene.dataset.rollScene];
+    const followsPointer = scene.dataset.rollScene === 'arcade' && scene.closest('.updates-roll');
+    const sceneObjects = scenes[scene.dataset.rollScene];
+    const objects = followsPointer ? [...sceneObjects, ...extraPickups] : sceneObjects;
     scene.innerHTML = `
       <svg viewBox="0 0 144 56">
         <path d="M7 46h130" fill="none" stroke="currentColor" stroke-opacity=".24"
@@ -248,7 +251,7 @@
       });
     }
 
-    if (scene.dataset.rollScene === 'arcade') {
+    if (followsPointer) {
       followPointer(scene, ball, items);
       continue;
     }
