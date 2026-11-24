@@ -171,6 +171,15 @@ a { color: inherit; text-underline-offset: .19em; }
 .hero-halo[data-animated] canvas { opacity: 1; }
 .hero-halo[data-animated]::before { opacity: 0; }
 
+.hero-wave {
+  position: absolute;
+  inset: auto 0 -1px;
+  inline-size: 100%;
+  block-size: clamp(1.5rem, 5vw, 4.25rem);
+  fill: var(--canvas);
+  pointer-events: none;
+}
+
 .featured-project {
   align-self: end;
   justify-self: end;
@@ -285,7 +294,31 @@ progress::-moz-progress-bar { background: var(--ink); border-radius: 999px; }
 .empty { border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
 .muted { color: var(--muted); }
 
-.updates { background: var(--ink); color: var(--light); }
+.updates { position: relative; background: var(--ink); color: var(--light); }
+.updates-roll { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.updates-roll .roll-scene { inset-inline-end: max(clamp(1rem, 4vw, 4rem), calc((100% - 76rem) / 2)); }
+.updates-roll svg { overflow: visible; }
+.updates-roll .roll-ball[data-following], .updates-roll .roll-object[data-collected] { opacity: .75; }
+.roll-sparks {
+  fill: none;
+  stroke: #ffce65;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  transform-origin: 0 0;
+  animation: roll-celebration 480ms ease-out both;
+}
+
+.roll-sparks path:nth-child(even) { stroke: #ace589; }
+
+@keyframes roll-celebration {
+  from { opacity: 0; transform: scale(.55); }
+  22% { opacity: 1; }
+  to { opacity: 0; transform: scale(1.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roll-sparks { display: none; }
+}
 .updates-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
