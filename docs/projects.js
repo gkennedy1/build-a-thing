@@ -35,7 +35,7 @@ const projects = [
         width: 450,
         height: 1040,
         alt: 'Mobile character detail for Kallin, a spectral hound inspired by Rib Tickler Shiraz, with Rare and 2024 vintage badges.',
-        caption: 'Opening Kallin from the gallery reveals the portrait, rarity, vintage and wine details.',
+        caption: 'Opening an avatar from the gallery reveals the portrait, rarity, vintage and wine details.',
       },
       {
         src: './images/cellar-dweller/beta-landing.jpg',
