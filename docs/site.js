@@ -36,19 +36,9 @@ function renderFeaturedProject() {
   if (!project) return;
 
   const featured = document.querySelector('.featured-project');
-  const title = element('h2');
-  title.id = 'featured-title';
-  const link = element('a', project.name);
+  const link = featured.querySelector('a');
+  link.textContent = project.name;
   link.href = projectDetailsUrl(project) ?? `#${project.id}`;
-  title.append(link);
-  featured.append(element('p', 'Featured project', 'featured-label'), title);
-
-  const next = project.milestones.find(milestone => !milestone.done);
-  if (next) {
-    const milestone = element('p', undefined, 'featured-milestone');
-    milestone.append(element('strong', 'Up next'), ` ${next.label}`);
-    featured.append(milestone);
-  }
   featured.hidden = false;
 }
 
